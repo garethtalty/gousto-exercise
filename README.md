@@ -43,9 +43,12 @@ Integrate moment.js for timezone/locality parsing.
 
 There is a lot of work that should be added to this short implementation to advance from a prototype, including but not limited to:
 - Inclusion of Compass to remove vendor preferences from CSS files
-- Minification and compression of CSS/Javascript files
+- Minification and compression of CSS/Javascript files - I have disabled minification so the source can be inspected 
 - Unit testing
 - Cross browser testing
+- Meta description, keywords
+- Favicon
+- etc..
 
 ## Installation
 
