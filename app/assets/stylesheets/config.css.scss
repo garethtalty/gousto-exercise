@@ -1,0 +1,27 @@
+
+@font-face {
+    font-family: 'Wickedgrit';
+    src: url('/wickedgrit.eot');
+    src: url('/wickedgrit.eot?#iefix') format('embedded-opentype'),
+         url('/wickedgrit.svg#Wickedgrit') format('svg'),
+         url('/wickedgrit.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+	/* colour pallette */
+
+$calendarRed: #d1563d;
+$calendarGreen: #7aa64b;
+$calendarBlue: #aeccdf;
+
+
+/* end colour pallette */
+
+/* fonts */
+
+@mixin font-grit{
+	font-family:'Wickedgrit', Arial, serif;
+}
+
+/* end fonts*/

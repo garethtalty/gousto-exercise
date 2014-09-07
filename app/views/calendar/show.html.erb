@@ -1,0 +1,34 @@
+<div id="calendar">
+
+	<p class="instruction">Using the calendar below you can change delivery days or put your deliveries on hold:</p>
+	<div id="form-container">
+	<%= form_tag '/subscription/update', :id=>'subscription-form' do %>
+
+<% 3.times do |n| %>
+
+<% @date = Date.today+n.months %>
+	
+  <div class="col-md-4" data-date="<%=@date%>">
+  	<p class="month"><%= @date.strftime('%B %Y') %></p>
+  	<% @calendar = Calendar.new(@date) %>
+
+    <%= calendar @date do |date| %>
+    
+	    <%= check_box_tag "#{date}", 0, false, disabled:!(date.wednesday? || date.friday?), :class=>(date.wednesday? || date.friday?) ? 'available' : 'not-available'%>
+	    <%= label_tag "#{date}", "#{date.day}", :class=>(date.wednesday? || date.friday?) ? 'available' : 'not-available'%>
+	    <% end %>
+  </div>
+  
+<% end %>
+<%= submit_tag 'Save' %>
+<% end %>
+<ul class="legend">
+	<li class="delivery"><span>&bull;</span>Delivery</li>
+	<li class="on-hold"><span>&bull;</span>On Hold</li>
+	<li class="available"><span>&bull;</span>Delivery Available</li>
+</ul>
+<p class="reminder">Please remember to click save after you've made changes</p>
+</div>
+</div>
+<div id="response">
+</div>

@@ -1,0 +1,186 @@
+@import 'config';
+
+
+html{
+	body{
+		background-color:#E9ECEC;
+	}
+}
+
+input{
+	outline:none !important;
+}
+
+.calendar {
+	width:1024px;
+	
+}
+
+.calendar thead td {
+	height:25px;
+	font: normal normal bold Arial, Helvetica, Sans-Serif;
+}
+
+td, tr th{
+	text-align:center;
+}
+
+#calendar{
+	p.instruction{
+		font-size:18px;
+	}
+	p.month{
+		background-color:$calendarRed;
+		color:#FFF;
+		text-align: center;
+		padding: 8px;
+		text-transform: uppercase;
+		@include font-grit;
+		font-size: 18px;
+	}
+	table{
+
+		td{
+			position:relative;
+			padding:0px;
+			min-height:36px;
+
+		}
+	}
+	#form-container{
+		background-color:#f1efef;
+		padding:2px;
+		form{
+			margin:10px;
+			.col-md-4{
+				background-color:#FFF;
+				padding-top:10px;
+				margin-bottom:10px;
+			}
+			table, td, tr, th{
+				border:none;
+				color:#666;
+				background:#FFF;
+				&.not-month{
+					padding:8px;
+					color:#CCC;
+				}
+			}
+
+			input[type="checkbox"]{
+				-webkit-appearance:none;
+				
+				-ms-appearance:none;
+				-o-appearance:none;
+				appearance:none;
+
+				-webkit-border-radius:14px;
+				-moz-border-radius:14px;
+				-ms-border-radius:14px;
+				-o-border-radius:14px;
+				border-radius:14px;
+
+				width:28px;
+				height:28px;
+
+				&.available{
+					background:$calendarBlue;
+				}
+				&.on-hold{
+					background:$calendarRed;
+				}
+				&.delivery, &:checked{
+					background:$calendarGreen;
+				}
+			}
+			input[type="submit"]{
+				background-color:#d9302e;
+				background-image:image-url("chevron.png");
+				background-repeat:no-repeat;
+				background-position: 90px center;
+				@include font-grit;
+				-webkit-appearance:none;
+				-moz-appearance:none;
+				-ms-appearance:none;
+				-o-appearance:none;
+				appearance:none;
+
+				-webkit-border-radius:4px;
+				-moz-border-radius:4px;
+				-ms-border-radius:4px;
+				-o-border-radius:4px;
+				border-radius:4px;
+				border:none;
+				color:#FFF;
+				padding: 10px 43px 10px 34px;
+				font-size:17px;
+				text-transform:uppercase;
+				float:right;
+				&:hover,&:active{
+					background-color:darken(#d9302e, 10);
+				}
+			}
+		}
+	}
+	ul.legend{
+		display:inline-block;
+		padding:0px 0px 0px 10px;
+		clear:both;
+		li{
+			display:inline-block;
+			vertical-align:middle;
+			position:relative;
+			padding-left:20px;
+			padding-right:10px;
+			span{
+				font-size:53px;
+				color: #7aa64b;
+				position: absolute;
+				left: 0px;
+				top: 2px;
+				line-height: 18px;
+				padding-left: 0px;
+			}
+			&.on-hold{
+				span{
+					color:$calendarRed;	
+				}
+			}	
+			&.available{
+				span{
+					color:$calendarBlue;
+				}
+			}
+			&.delivery{
+				span{
+					color:$calendarGreen;
+				}
+			}
+		}
+		
+	}
+	p.reminder{
+		color:$calendarGreen;
+	}
+}
+label{
+	color:#999;
+	position:absolute;
+	left:50%;
+	display:inline-block;
+	margin-left: -10px;
+	margin-top: 8px;
+	text-align: center;
+	width: 20px;
+	font-size:13px;
+}
+label.available, label.on-hold, label.delivery{
+	color:#FFF;
+	cursor:hand;
+	cursor:pointer;
+
+}
+
+input[disabled]{
+	display:none
+}

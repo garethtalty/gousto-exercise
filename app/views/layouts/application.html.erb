@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gousto Coding Exercise</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "bootstrap", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+	<%= yield %>
+</div>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>
